@@ -1,5 +1,5 @@
 html {
-  font-size: 62.5%; /* 16px x 62.5 = 10px = 1rem */
+  font-size: 1rem;
   box-sizing: border-box;
 }
 body {
@@ -202,6 +202,7 @@ img.large {
   background-color: #f8f8f8;
   border-radius: 0.5rem;
   margin: 1rem;
+  flex: 0 1 35rem;
 }
 .card-body {
   padding: 1rem;
@@ -212,14 +213,14 @@ img.large {
 .price {
   font-size: 2rem;
 }
-/* Rating */
+/* Rating
 .rating span {
   color: #f0c040;
   margin: 0.1rem;
 }
 .rating span:last-child {
   color: #404040;
-}
+} */
 /* Alert */
 .loading {
   display: block !important;

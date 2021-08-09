@@ -25,7 +25,6 @@ function App() {
             {data.products.map(product => (
             <div key={product.id} className="card">
               <a href={'/product/${product.id}'}>
-                {/* <!-- image size: 680px by 830px --> */}
                 <img className="medium" src={product.image} alt={product.name} />
               </a>
               <div className="card-body">
