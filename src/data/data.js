@@ -1,7 +1,7 @@
 const data = {
     products:[
         {
-            id:'1',
+            _id:'1',
             name: 'פינגר ליים ירוק',
             catagory: 'פירות הדר',
             image:'/images/fingerLimeGreen.jpg',
@@ -10,7 +10,7 @@ const data = {
             description:'',
         },
         {
-            id:'2',
+            _id:'2',
             name: 'פינגר ליים אדום',
             catagory: 'פירות הדר',
             image:'./images/red-sampanya-finger-lime.jpg',
@@ -19,7 +19,7 @@ const data = {
             description:'',
         },
         {
-            id:'3',
+            _id:'3',
             name: 'פינגר ליים צהוב',
             catagory: 'פירות הדר',
             image:'./images/sari-finger-lime.jpg',
@@ -28,7 +28,7 @@ const data = {
             description:'',
         },
         {
-            id:'4',
+            _id:'4',
             name: 'לימון מאייר',
             catagory: 'פירות הדר',
             image:'./images/meyer-limon.jpg',
@@ -37,7 +37,7 @@ const data = {
             description:'',
         },
         {
-            id:'5',
+            _id:'5',
             name: 'לימון קאפיר',
             catagory: 'פירות הדר',
             image:'./images/kaffir-lime.jpg',
@@ -46,7 +46,7 @@ const data = {
             description:'',
         },
         {
-            id:'6',
+            _id:'6',
             name: 'אצבעות בודהה',
             catagory: 'פירות הדר',
             image:'./images/budanin-lemon.jpg',

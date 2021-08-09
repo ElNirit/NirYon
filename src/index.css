@@ -52,7 +52,7 @@ h2 {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 a:hover {
   color: #ff8000;
@@ -100,7 +100,7 @@ button.small {
 header a {
   color: #ffffff;
   padding: 1rem;
-  /* flex: 0 1 35rem; */
+  flex: 0 1 35rem;
 
 }
 a.brand {

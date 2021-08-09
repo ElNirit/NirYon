@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
-import data from './data/data'
 import { Button, Card, Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Parse from 'parse/react-native';
-import Product from "./components/Product";
+import { BrowserRouter, Route } from "react-router-dom";
+import ProductPage from "./Page/ProductPage";
+import HomePage from "./Page/HomePage";
 
 function App() {
   
   return (
+  <BrowserRouter>
     <div className="grid-container">
       <header className="row">
         <div>
@@ -20,17 +22,13 @@ function App() {
         </div>
       </header>
       <main>
-        
-         <div>
-          <div className="row center">
-            {data.products.map(product => (
-              <Product key={product.id} product={product}></Product>
-            ))}           
-          </div>
-        </div>
+        <Route path="/product/:id" component={ProductPage}></Route>
+        <Route path="/" component={HomePage} exact></Route>
+         
       </main>
       <footer className="row center">All right reserved</footer>
     </div>
+  </BrowserRouter>
   );
 }
 
