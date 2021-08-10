@@ -1,6 +1,5 @@
 {
   "name": "todo",
-  "type": "module",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,7 +9,6 @@
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
     "bootstrap": "^5.0.2",
-    "express": "^4.17.1",
     "json-server": "^0.16.3",
     "json-server-auth": "^2.1.0",
     "jwt-decode": "^3.1.2",
@@ -23,7 +21,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "nodemon --watch src/backend --exec node --experimental-modules src/backend/server.js react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -45,20 +43,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "index.js",
-  "devDependencies": {
-    "nodemon": "^2.0.12"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ElNirit/NirYon.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ElNirit/NirYon/issues"
-  },
-  "homepage": "https://github.com/ElNirit/NirYon#readme"
+  }
 }

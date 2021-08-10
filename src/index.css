@@ -26,7 +26,7 @@ body {
   grid-template-columns: 1fr;
   grid-template-rows: 5rem 1fr 5rem;
   height: 100%;
-  /* place-content: space-between; */
+  /* justify-content: space-between; */
 }
 header {
   grid-area: header;
@@ -100,7 +100,7 @@ button.small {
 header a {
   color: #ffffff;
   padding: 1rem;
-  /* width:fit-content; */
+  flex: 0 1 35rem;
 
 }
 a.brand {
@@ -118,11 +118,10 @@ a.brand {
 }
 .row {
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  /* flex: 0 1 35rem; */
 
 }
 .row.center {
@@ -209,6 +208,7 @@ img.large {
   border-radius: 0.5rem;
   margin: 1rem;
   flex: 0 1 35rem;
+  align-items:center;
 }
 .card-body {
   padding: 1rem;

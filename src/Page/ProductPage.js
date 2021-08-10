@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 import data from '../data/data'
 // import Product from '../components/product'
 
@@ -10,16 +9,11 @@ export default function ProductPage(props) {
         <div>המוצר לא נמצא!</div>
         );
     }
-    return (
+    return(
         <div>
-            <Link to="/">חזרה</Link>
-            <div className="row top">
+            <div className="row">
                 <div className="col-2">
-                    <img 
-                        className="large" 
-                        src={product.image} 
-                        alt={product.name}
-                    ></img>
+                    <img className="large" src={product.image} alt={product.name}></img>
                 </div>
                 <div className="col-1">
                     <ul>
@@ -36,7 +30,7 @@ export default function ProductPage(props) {
                         </li>
                         <li> 
                             תיאור:
-                            <p>{product.description}</p>
+                            {product.description}
                         </li>
                     </ul>
                 </div>
