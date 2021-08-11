@@ -208,7 +208,8 @@ img.large {
   border-radius: 0.5rem;
   margin: 1rem;
   flex: 0 1 35rem;
-  align-items:center;
+  align-items: center;
+
 }
 .card-body {
   padding: 1rem;
