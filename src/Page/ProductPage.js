@@ -12,45 +12,43 @@ export default function ProductPage(props) {
     return(
         <div>
             <div className="row">
-                <div className="col-2">
+                <div className="col-4">
                     <img className="large" src={product.image} alt={product.name}></img>
                 </div>
-                <div className="col-1">
+                <div className="col-4">
                     <ul>
                         <li>
                             <h1>{product.name}</h1>
                         </li>
-                        <li>
-                            חקלאי:
-                            {product.brand}
+                        <li>                           
+                            {"חקלאי : "+ product.owner}
                         </li>
-                        <li>
+                        {/* <li>
                             מחיר:
                             {product.price} ש"ח
-                        </li>
-                        <li> 
-                            תיאור:
-                            {product.description}
+                        </li> */}
+                        <li>
+                            {"תיאור : "+product.description}
                         </li>
                     </ul>
                 </div>
-                <div className="col-1">
+                <div className="col-2">
                     <div className="card card-body">
                         <ul>
                             <li>
                                 <div className="row">
-                                    <div>מחיר:</div>
-                                    <div className="price">{product.price} ש"ח</div>
+                                    <div>מחיר: </div>
+                                    <div className="price">{" "+product.price} ש"ח</div>
                                 </div>
                             </li>
                             <li>
                                 <div className="row">
-                                    <div>סטטוס:</div>
+                                    <div>מלאי:</div>
                                     <div>
                                         {product.countInStock > 0 ? (
-                                            <span className="success"> נמצא במלאי</span>
+                                            <span className="success"> נמצא במלאי </span>
                                             ):(
-                                            <span className="error"> אזל המלאי</span>
+                                            <span className="error"> אזל המלאי </span>
                                         )}
                                     </div>
 

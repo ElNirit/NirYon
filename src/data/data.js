@@ -24,7 +24,7 @@ const data = {
             catagory: 'פירות הדר',
             image:'/images/sari-finger-lime.jpg',
             price: 19,
-            owner:'ניריון',
+            owner: ' ניריון',
             description:''
         },
         {
