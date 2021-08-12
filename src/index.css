@@ -220,16 +220,9 @@ img.large {
 .price {
   font-size: 2rem;
 }
-/* Rating
-.rating span {
-  color: #f0c040;
-  margin: 0.1rem;
-}
-.rating span:last-child {
-  color: #404040;
-} */
+
 /* Alert */
-.loading {
+/* .loading {
   display: block !important;
 }
 .success {
@@ -254,7 +247,7 @@ img.large {
 .alert-success {
   color: #20a020;
   background-color: #eeffe0;
-}
+} */
 /* Form */
 .form {
   max-width: 60rem;

@@ -30,7 +30,7 @@ export default function HomePage() {
            <MessageBox>{error}</MessageBox>
           ):( */}
           <div className="row center">
-            {data.products.map(product => (
+            {products.map(product => (
               <Product key={product._id} product={product}></Product>
             ))}           
           </div>
