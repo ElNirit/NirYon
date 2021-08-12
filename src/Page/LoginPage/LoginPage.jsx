@@ -18,21 +18,12 @@ function LoginPage({users, onLogin}) {
 
     function login() {
         
-        // let activeUser = null;
-        // for (const user of users) {
-        //     if (user.email === email && user.pwd === pwd) {
-        //         activeUser = user;
-        //         break;
-        //     }
-        // }
-
         const activeUser = users.find(user => user.email === email && user.pwd === pwd);
 
         if (activeUser) {
             // Invoke parent (App) function to update the activeUser state in the app
             onLogin(activeUser);
         } else {
-            // Showing an alert
             setShowInvalidLogin(true);
         }
     }
