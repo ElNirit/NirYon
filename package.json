@@ -1,5 +1,7 @@
 {
   "name": "todo",
+  "proxy":"http://127.0.0.1:5000",
+  "type":"module",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,6 +12,7 @@
     "axios": "^0.21.1",
     "bootstrap": "^5.0.2",
     "bulma": "^0.9.3",
+    "express": "^4.17.1",
     "json-server": "^0.16.3",
     "json-server-auth": "^2.1.0",
     "jwt-decode": "^3.1.2",
