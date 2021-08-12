@@ -7,8 +7,8 @@ import ActiveUserContext from '../../shared/ActiveUserContext';
 import './LoginPage.css'
 
 function LoginPage({users, onLogin}) {
-    const [email, setEmail] = useState("admin@example.com");
-    const [pwd, setPwd] = useState("456");
+    const [email, setEmail] = useState("");
+    const [pwd, setPwd] = useState("");
     const [showInvalidLogin, setShowInvalidLogin] = useState(false);
     const activeUser = useContext(ActiveUserContext);
 
@@ -40,7 +40,7 @@ function LoginPage({users, onLogin}) {
     return (
         <div className="p-login">
             <h1>התחברות</h1>
-            <p>or <Link to="/signup">הרשמה</Link></p>
+            <h2>או  <Link to="/signup"> הרשמה </Link> </h2>
             {showInvalidLogin ?
                 <Alert variant="danger" onClose={() => setShowInvalidLogin(false)} dismissible>שם או סיסמה לא נכונים</Alert> : null}
             <Form>
@@ -48,9 +48,9 @@ function LoginPage({users, onLogin}) {
                     <Form.Label>דוא"ל</Form.Label>
                     <Form.Control type="email" placeholder="Enter email" 
                         value={email} onChange={e => setEmail(e.target.value)} />
-                    {/* <Form.Text className="text-muted">
+                    <Form.Text className="text-muted">
 
-                    </Form.Text> */}
+                    </Form.Text>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">

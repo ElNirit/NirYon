@@ -6,6 +6,8 @@ import Parse from 'parse/react-native';
 import { BrowserRouter, Route } from "react-router-dom";
 import ProductPage from "./Page/ProductPage";
 import HomePage from "./Page/HomePage";
+import LoginPage from "./Page/LoginPage/LoginPage";
+import Cart from "./components/Cart";
 
 function App() {
   
@@ -14,19 +16,23 @@ function App() {
     <div className="grid-container">
       <header className="d-flex align-items-center justify-content-between">
         <div>
-          <a className="brand" href="/">NirYon Logo</a>
+          <a className="brand" href="/">לוגו של ניריון </a>
         </div>
         <div>
           <a href="/cart">לוגו סל קניות</a>
-          <a href="/signin">התחברות / הרשמה</a>
+          <a href="/login">התחברות / הרשמה</a>
         </div>
       </header>
       <main>
-        <Route path="/product/:id" component={ProductPage}></Route>
-        <Route path="/" component={HomePage} exact></Route>
-         
+        <switch>
+          <Route path="/product/:id" component={ProductPage}></Route>
+          <Route path="/" component={HomePage} exact></Route>
+          <Route path="/login" component={LoginPage} exact></Route>
+          <Route path="/cart" component={Cart} exact></Route>
+
+        </switch>
       </main>
-      <footer className="row center">ניריון</footer>
+      <footer className="row center">כל הזכויות שמורות לניריון</footer>
     </div>
   </BrowserRouter>
   );

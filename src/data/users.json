@@ -3,14 +3,14 @@
         "fName":"Jhon",
         "lName":"Doe",
         "email": "regular@example.com",
-        "password": "123",
+        "pwd": "123",
         "id": 1
     },
     {
         "fName":"Nirit",
         "lName":"Elkayam",
         "email":"admin@example.com",
-        "password":"456",
+        "pwd":"456",
         "id": 2
     }
 ]
