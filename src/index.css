@@ -222,7 +222,7 @@ img.large {
 }
 
 /* Alert */
-/* .loading {
+.loading {
   display: block !important;
 }
 .success {
@@ -247,7 +247,7 @@ img.large {
 .alert-success {
   color: #20a020;
   background-color: #eeffe0;
-} */
+}
 /* Form */
 .form {
   max-width: 60rem;

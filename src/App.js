@@ -3,12 +3,13 @@ import { Button, Card, Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Parse from 'parse/react-native';
-import { BrowserRouter,HashRouter, Switch , Route } from "react-router-dom";
+import { BrowserRouter, Switch , Route, Link } from "react-router-dom";
 import ProductPage from "./Page/ProductPage";
 import HomePage from "./Page/HomePage";
 import LoginPage from "./Page/LoginPage/LoginPage";
-import Cart from "./components/Cart";
-import Login from "./components/Login";
+// import Cart from "./components/Cart";
+// import Login from "./components/Login";
+import CartPage from "./Page/CartPage";
 
 
 function App() {
@@ -18,11 +19,11 @@ function App() {
     <div className="grid-container">
       <header className="d-flex align-items-center justify-content-between">
         <div>
-          <a className="brand" href="/">לוגו של ניריון </a>
+          <Link className="brand" to="/">לוגו של ניריון </Link>
         </div>
         <div>
-          <a href="/cart">לוגו סל קניות</a>
-          <a href="/login">התחברות / הרשמה</a>
+          <Link to="/cart">לוגו סל קניות</Link>
+          <Link to="/login">התחברות / הרשמה</Link>
         </div>
       </header>
       <main>
@@ -30,7 +31,7 @@ function App() {
           <Route path="/product/:id" component={ProductPage}></Route>
           <Route path="/" component={HomePage} exact></Route>
           <Route path="/login" component={LoginPage} exact></Route>
-          <Route path="/cart" component={Cart} exact></Route>
+          <Route path="/cart/:id?" component={CartPage} ></Route>
 
         </Switch>
       </main>
