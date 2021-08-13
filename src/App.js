@@ -3,7 +3,7 @@ import { Button, Card, Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Parse from 'parse/react-native';
-import { BrowserRouter,HashRouter , Route } from "react-router-dom";
+import { BrowserRouter,HashRouter, Switch , Route } from "react-router-dom";
 import ProductPage from "./Page/ProductPage";
 import HomePage from "./Page/HomePage";
 import LoginPage from "./Page/LoginPage/LoginPage";
@@ -26,13 +26,13 @@ function App() {
         </div>
       </header>
       <main>
-        <switch>
+        <Switch>
           <Route path="/product/:id" component={ProductPage}></Route>
           <Route path="/" component={HomePage} exact></Route>
           <Route path="/login" component={LoginPage} exact></Route>
           <Route path="/cart" component={Cart} exact></Route>
 
-        </switch>
+        </Switch>
       </main>
       <footer className="row center">כל הזכויות שמורות לניריון</footer>
     </div>

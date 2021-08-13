@@ -48,7 +48,7 @@ export default function ProductPage(props) {
                                         {product.countInStock > 0 ? (
                                             <span className="success"> נמצא במלאי </span>
                                             ):(
-                                            <span className="error"> אזל המלאי </span>
+                                            <span className="danger"> אזל המלאי </span>
                                         )}
                                     </div>
 

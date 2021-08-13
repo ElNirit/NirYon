@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import Product from "../components/Product";
-import data from '../data/data';
+// import data from '../data/data';
 
 export default function HomePage() {
   const [products, setProducts] = useState([]);
