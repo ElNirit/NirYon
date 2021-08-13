@@ -55,7 +55,7 @@ export default function ProductPage(props) {
                                     <li>
                                         <div className="row">
                                             <div>מחיר: </div>
-                                            <div className="price">{" " + product.price} ש"ח</div>
+                                            <div className="price">{product.price} ש"ח</div>
                                         </div>
                                     </li>
                                     <li>
@@ -79,10 +79,7 @@ export default function ProductPage(props) {
                                                 <div className="row">
                                                     <div>כמות</div>
                                                     <div>
-                                                        <select
-                                                            value={qty}
-                                                            onChange={e => setQty(e.target.value)}
-                                                        >
+                                                        <select value={qty} onChange={e => setQty(e.target.value)}>
                                                             {[...Array(product.countInStock).keys()].map(
                                                                 (x) => (
                                                                     <option key={x + 1} value={x + 1}>
@@ -95,10 +92,7 @@ export default function ProductPage(props) {
                                                 </div>
                                             </li>
                                             <li>
-                                                <button
-                                                    onClick={addToCartHandler}
-                                                    className="primary block"
-                                                >
+                                                <button className="primary block" onClick={addToCartHandler} >
                                                     הוסף לסל
                                                 </button>
                                             </li>

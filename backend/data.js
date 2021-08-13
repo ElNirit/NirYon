@@ -7,6 +7,7 @@ const data = {
             image:'/images/fingerLimeGreen.jpg',
             price: 19,
             owner:'ניריון',
+            countInStock: 10,
             description:''
         },
         {
@@ -25,6 +26,7 @@ const data = {
             image:'/images/sari-finger-lime.jpg',
             price: 19,
             owner: ' ניריון',
+            countInStock: 10,
             description:''
         },
         {
@@ -34,6 +36,7 @@ const data = {
             image:'/images/meyer-limon.jpg',
             price: 19,
             owner:'ניריון',
+            countInStock: 10,
             description:''
         },
         {
@@ -43,6 +46,7 @@ const data = {
             image:'/images/kaffir-lime.jpg',
             price: 19,
             owner:'ניריון',
+            countInStock: 10,
             description:''
         },
         {
@@ -52,6 +56,7 @@ const data = {
             image:'/images/budanin-lemon.jpg',
             price: 19,
             owner:'ניריון',
+            countInStock: 10,
             description:''
         }
     ]
