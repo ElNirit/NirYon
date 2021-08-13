@@ -17,6 +17,7 @@ const data = {
             image:'/images/red-sampanya-finger-lime.jpg',
             price: 19,
             owner:'ניריון',
+            countInStock: 10,
             description:''
         },
         {
