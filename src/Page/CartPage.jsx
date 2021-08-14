@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { addToCart } from '../actions/cartAct';
+import { addToCart, removeFromCart } from '../actions/cartAct';
 import MessageBox from '../components/MessageBox';
 
 export default function CartPage(props) {
@@ -19,8 +19,8 @@ export default function CartPage(props) {
         }
     }, [dispatch, productId, qty]);
 
-    const removeFromCartHandler = () => {
-        //delet action
+    const removeFromCartHandler = (id) => {
+        dispatch(removeFromCart(id));
     };
 
     const checkoutHandler = () => {
