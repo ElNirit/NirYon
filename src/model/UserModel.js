@@ -6,6 +6,7 @@ class UserModel {
         this.lname = plainUser.lname;
         this.email = plainUser.email;
         this.pwd = plainUser.pwd;
+        this.isAdmin = plainUser.isAdmin;
     }
 }
 

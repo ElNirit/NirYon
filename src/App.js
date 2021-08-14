@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Button, Card, Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import Parse from 'parse/react-native';
+// import AsyncStorage from '@react-native-async-storage/async-storage';
+// import Parse from 'parse/react-native';
 import { BrowserRouter, Switch , Route, Link } from "react-router-dom";
 import ProductPage from "./Page/ProductPage";
 import HomePage from "./Page/HomePage";
@@ -11,10 +11,13 @@ import LoginPage from "./Page/LoginPage/LoginPage";
 // import Login from "./components/Login";
 import CartPage from "./Page/CartPage";
 import { useSelector } from "react-redux";
-
+import jsonUsers from './data/users.json';
+import UserModel from './model/UserModel';
 
 function App() {
-  
+  const [users, setUsers] = useState(jsonUsers.map(plainUser => new UserModel(plainUser)));
+  const [activeUser, setActiveUser] = useState();
+
   const cart= useSelector(state =>state.cart);
   const {cartItems} = cart;
   return (
@@ -33,14 +36,16 @@ function App() {
           )}
 
           </Link>
-          <Link to="/login">התחברות / הרשמה</Link>
+          {!activeUser ? <Link to="/login">התחברות / הרשמה</Link> : null }
+          {activeUser ? <Link to="/logout">התנתק</Link> : null }
+
         </div>
       </header>
       <main>
         <Switch>
           <Route path="/product/:id" component={ProductPage}></Route>
           <Route path="/" component={HomePage} exact></Route>
-          <Route path="/login" component={LoginPage} exact></Route>
+          <Route path="/login" component={LoginPage} users={users} exact></Route>
           <Route path="/cart/:id?" component={CartPage} ></Route>
 
         </Switch>

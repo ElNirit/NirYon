@@ -7,8 +7,8 @@ import ActiveUserContext from '../../shared/ActiveUserContext';
 import './LoginPage.css'
 
 function LoginPage({users, onLogin}) {
-    const [email, setEmail] = useState("");
-    const [pwd, setPwd] = useState("");
+    const [email, setEmail] = useState("admin@example.com");
+    const [pwd, setPwd] = useState("456");
     const [showInvalidLogin, setShowInvalidLogin] = useState(false);
     const activeUser = useContext(ActiveUserContext);
 
@@ -31,13 +31,13 @@ function LoginPage({users, onLogin}) {
     return (
         <div className="p-login">
             <h1>התחברות</h1>
-            <h2>או  <Link to="/signup"> הרשמה </Link> </h2>
+            <h3>או  <Link to="/signup"> הרשמה </Link> </h3>
             {showInvalidLogin ?
                 <Alert variant="danger" onClose={() => setShowInvalidLogin(false)} dismissible>שם או סיסמה לא נכונים</Alert> : null}
             <Form>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>דוא"ל</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" 
+                    <Form.Control type="email" placeholder=" הכניסו את האימייל פה" 
                         value={email} onChange={e => setEmail(e.target.value)} />
                     <Form.Text className="text-muted">
 
@@ -46,14 +46,14 @@ function LoginPage({users, onLogin}) {
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>סיסמה</Form.Label>
-                    <Form.Control type="password" placeholder="Password" 
+                    <Form.Control type="password" placeholder=" הכניסו את הסיסמה פה " 
                         value={pwd} onChange={e => setPwd(e.target.value)} />
                 </Form.Group>
-                <div className="d-grid gap-2">
-                    <Button variant="success" type="button" onClick={login}>
+                {/* <div className="d-grid gap-2"> */}
+                    <Button className="primary block" variant="success" type="button" onClick={login}>
                         התחברות
                     </Button>
-                </div>
+                {/* </div> */}
             </Form>
         </div>
     );
