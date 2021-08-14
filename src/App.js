@@ -10,10 +10,13 @@ import LoginPage from "./Page/LoginPage/LoginPage";
 // import Cart from "./components/Cart";
 // import Login from "./components/Login";
 import CartPage from "./Page/CartPage";
+import { useSelector } from "react-redux";
 
 
 function App() {
   
+  const cart= useSelector(state =>state.cart);
+  const {cartItems} = cart;
   return (
   <BrowserRouter>
     <div className="grid-container">
@@ -22,7 +25,14 @@ function App() {
           <Link className="brand" to="/">לוגו של ניריון </Link>
         </div>
         <div>
-          <Link to="/cart">לוגו סל קניות</Link>
+          <Link to="/cart">סל קניות 
+          {cartItems.length > 0 && (
+            <span className="badge border-light rounded-circle bg-light text-dark"> {cartItems.length}
+              <span className="visually-hidden">פריטים בסל</span>
+            </span>
+          )}
+
+          </Link>
           <Link to="/login">התחברות / הרשמה</Link>
         </div>
       </header>
