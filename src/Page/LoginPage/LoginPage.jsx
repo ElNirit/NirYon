@@ -1,16 +1,16 @@
 import React from 'react';
-import { useContext } from 'react';
+// import { useContext } from 'react';
 import { useState } from 'react';
 import { Button, Form, Alert } from 'react-bootstrap';
 import { Link, Redirect } from 'react-router-dom';
-import ActiveUserContext from '../../shared/ActiveUserContext';
+// import ActiveUserContext from '../../shared/ActiveUserContext';
 import './LoginPage.css'
 
-function LoginPage({users, onLogin}) {
+function LoginPage({activeUser, users, onLogin}) {
     const [email, setEmail] = useState("admin@example.com");
     const [pwd, setPwd] = useState("456");
     const [showInvalidLogin, setShowInvalidLogin] = useState(false);
-    const activeUser = useContext(ActiveUserContext);
+    // const activeUser = useContext(ActiveUserContext);
 
     if (activeUser) {
         return <Redirect to="/"/>
@@ -18,6 +18,13 @@ function LoginPage({users, onLogin}) {
 
     function login() {
         
+        // let activeUser = null;
+        // for (const user of users){
+        //     if(user => user.email === email && user.pwd === pwd){
+        //         activeUser = user;
+        //         break;
+        //     }
+        // }
         const activeUser = users.find(user => user.email === email && user.pwd === pwd);
 
         if (activeUser) {
@@ -36,12 +43,12 @@ function LoginPage({users, onLogin}) {
                 <Alert variant="danger" onClose={() => setShowInvalidLogin(false)} dismissible>שם או סיסמה לא נכונים</Alert> : null}
             <Form>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>דוא"ל</Form.Label>
+                    <Form.Label>אימייל</Form.Label>
                     <Form.Control type="email" placeholder=" הכניסו את האימייל פה" 
                         value={email} onChange={e => setEmail(e.target.value)} />
-                    <Form.Text className="text-muted">
+                    {/* <Form.Text className="text-muted">
 
-                    </Form.Text>
+                    </Form.Text> */}
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">

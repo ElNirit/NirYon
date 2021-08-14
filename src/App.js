@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, Card, Form } from 'react-bootstrap';
+// import { Button, Card, Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import AsyncStorage from '@react-native-async-storage/async-storage';
 // import Parse from 'parse/react-native';
@@ -16,7 +16,8 @@ import UserModel from './model/UserModel';
 
 function App() {
   const [users, setUsers] = useState(jsonUsers.map(plainUser => new UserModel(plainUser)));
-  const [activeUser, setActiveUser] = useState();
+  const [activeUser, setActiveUser] = useState(null);
+  const onLogout= () => setActiveUser(null);
 
   const cart= useSelector(state =>state.cart);
   const {cartItems} = cart;
@@ -37,7 +38,7 @@ function App() {
 
           </Link>
           {!activeUser ? <Link to="/login">התחברות / הרשמה</Link> : null }
-          {activeUser ? <Link to="/logout">התנתק</Link> : null }
+          {activeUser ? <Link to="/logout" onClick={onLogout}>התנתק</Link> : null }
 
         </div>
       </header>
@@ -45,7 +46,7 @@ function App() {
         <Switch>
           <Route path="/product/:id" component={ProductPage}></Route>
           <Route path="/" component={HomePage} exact></Route>
-          <Route path="/login" component={LoginPage} users={users} exact></Route>
+          <Route path="/login" component={LoginPage} users={users} activeUser={activeUser} onLogin={activeUser=> setActiveUser(activeUser)} exact></Route>
           <Route path="/cart/:id?" component={CartPage} ></Route>
 
         </Switch>
