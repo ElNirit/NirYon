@@ -1,13 +1,21 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { saveShippingAddress } from '../actions/cartAct';
 import CheckoutLine from '../components/CheckoutLine'
 
 export default function ShippingAddPage(props) {
-    const [fullName, setFullName] = useState('');
-    const [address, setAddress] = useState('');
-    const [city, setCity] = useState('');
-    const [zipCode, setZipCode] = useState('');
+    const userSignin = useSelector(state => state.userSignin);
+    
+    const {userInfo}= userSignin;
+    const cart = useSelector(state => state.cart);
+    const {shippingAddress} = cart;
+    if (!userInfo){
+        props.history.push('/signin');
+    }
+    const [fullName, setFullName] = useState(shippingAddress.fullName);
+    const [address, setAddress] = useState(shippingAddress.address);
+    const [city, setCity] = useState(shippingAddress.city);
+    const [zipCode, setZipCode] = useState(shippingAddress.zipCode);
 
     const dispatch = useDispatch();
     const submitHandler = (e) =>{
