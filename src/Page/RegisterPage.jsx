@@ -1,25 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { signin } from '../actions/userAct';
+import { register } from '../actions/userAct';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 
-export default function SigninPage(props) {
-
+export default function RegisterPage(props) {
+    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
 
-    const redirect = props.location.search ? props.location.search.split('=')[1] : '/';
 
-    const userSignin = useSelector((state) => state.userSignin);
-    const { userInfo, loading, error  } = userSignin;
+    const redirect = props.location.search 
+        ? props.location.search.split('=')[1] 
+        : '/';
+
+    const userRegister = useSelector((state) => state.userRegister);
+    const { userInfo, loading, error } = userRegister;
 
     const dispatch = useDispatch();
-
     const submitHandler = (e) => {
         e.preventDefault();
-        dispatch(signin(email, password));
+        if(password !== confirmPassword){
+            alert('הסיסמה לא זהה בכל השדרות');} else{
+        dispatch(register(name, email, password));
+        }
     }
     useEffect(() => {
         if (userInfo) {
@@ -30,10 +36,19 @@ export default function SigninPage(props) {
         <div>
             <form className="form" onSubmit={submitHandler}>
                 <div>
-                    <h1>התחברות</h1>
+                    <h1>פתיחת חשבון חדש</h1>
                 </div>
                 {loading && <LoadingBox></LoadingBox>}
                 {error && <MessageBox variant="danger">{error}</MessageBox>}
+                <div>
+                    <label htmlFor="name"> שם </label>
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="הכניסו את השם פה"
+                        required
+                        onChange={e => setName(e.target.value)}></input>
+                </div>
                 <div>
                     <label htmlFor="email"> אימייל </label>
                     <input
@@ -53,13 +68,23 @@ export default function SigninPage(props) {
                         onChange={e => setPassword(e.target.value)}></input>
                 </div>
                 <div>
+                    <label htmlFor="confirmPassword"> אשרו סיסמה </label>
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="הכניסו את הסיסמה שוב פה"
+                        required
+                        onChange={e => setConfirmPassword(e.target.value)}></input>
+                </div>
+                <div>
                     <label />
                     <button className="primary" type="submit"> אשר </button>
                 </div>
                 <div>
                     <label />
                     <div>
-                        לקוח חדש? {' '}<Link to={`/register?redirect=${redirect}`}>פתחו חשבון</Link>
+                         כבר לקוח? {' '}
+                         <Link to={`/signin?redirect=${redirect}`}>הכנסו לחשבון</Link>
                     </div>
                 </div>
             </form>
