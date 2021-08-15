@@ -2,6 +2,7 @@
   "name": "todo",
   "proxy": "http://127.0.0.1:5000",
   "type": "module",
+  "homepage": "https://elnirit.github.io/NirYon/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

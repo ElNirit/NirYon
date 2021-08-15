@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { saveShippingAddress } from '../actions/cartAct';
-import CheckoutLine from '../components/CheckoutLine'
+import CheckoutLine from '../components/CheckoutLine';
 
 export default function ShippingAddPage(props) {
-    const userSignin = useSelector(state => state.userSignin);
-    
+    const userSignin = useSelector((state) => state.userSignin);
+
     const {userInfo}= userSignin;
-    const cart = useSelector(state => state.cart);
+    const cart = useSelector((state) => state.cart);
     const {shippingAddress} = cart;
     if (!userInfo){
         props.history.push('/signin');

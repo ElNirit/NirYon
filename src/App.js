@@ -17,6 +17,7 @@ import SigninPage from "./Page/SigninPage";
 import { signout } from "./actions/userAct";
 import RegisterPage from "./Page/RegisterPage";
 import ShippingAddPage from "./Page/ShippingAddPage";
+import PaymentPage from "./Page/PaymentPage";
 
 function App() {
   const [users, setUsers] = useState(jsonUsers.map(plainUser => new UserModel(plainUser)));
@@ -86,7 +87,8 @@ function App() {
             <Route path="/" component={HomePage} exact></Route>
             <Route path="/signin" component={SigninPage} exact></Route>
             <Route path="/register" component={RegisterPage} exact></Route>
-            <Route path="/shipping" component={ShippingAddPage}></Route>
+            <Route path="/shipping" component={ShippingAddPage} exact></Route>
+            <Route path="/payment" component={PaymentPage} exact></Route>
 
             {/* <Route path="/login" exact  >
               <LoginPage users={users} activeUser={activeUser} onLogin={login}/>
