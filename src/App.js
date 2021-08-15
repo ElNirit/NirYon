@@ -22,6 +22,16 @@ function App() {
 
   const cart = useSelector(state => state.cart);
   const { cartItems } = cart;
+
+  function login(activeUser) {
+    setActiveUser(activeUser);
+    localStorage.setItem("activeUser", JSON.stringify(activeUser));
+  }
+
+  // function logout() {
+  //   setActiveUser(null);
+  //   localStorage.removeItem("activeUser");
+  // }
   return (
     <BrowserRouter>
       <div className="grid-container">
@@ -54,7 +64,7 @@ function App() {
             <Route path="/product/:id" component={ProductPage}></Route>
             <Route path="/" component={HomePage} exact></Route>
             <Route path="/login" exact  >
-              <LoginPage users={users} activeUser={activeUser} onLogin={activeUser => setActiveUser(activeUser)}/>
+              <LoginPage users={users} activeUser={activeUser} onLogin={login}/>
             </Route>
             <Route path="/cart/:id?" component={CartPage} ></Route>
 

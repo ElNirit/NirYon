@@ -12,16 +12,15 @@ function LoginPage({users, activeUser, onLogin}) {
     const [showInvalidLogin, setShowInvalidLogin] = useState(false);
     // const activeUser = useContext(ActiveUserContext);
 
-    // if (activeUser) {
-    //     return <Redirect to="/"/>
-    // }
+    if (activeUser) {
+        return <Redirect to="/"/>
+    }
 
     function login() { 
         console.log(users);
         const activeUser = users.find(user => user.email === email && user.pwd === pwd);
 
         if (activeUser) {
-            // Invoke parent (App) function to update the activeUser state in the app
             onLogin(activeUser);
         } else {
             setShowInvalidLogin(true);
