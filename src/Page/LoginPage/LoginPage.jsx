@@ -6,17 +6,18 @@ import { Link, Redirect } from 'react-router-dom';
 // import ActiveUserContext from '../../shared/ActiveUserContext';
 import './LoginPage.css'
 
-function LoginPage({activeUser, users, onLogin}) {
+function LoginPage({users, activeUser, onLogin}) {
     const [email, setEmail] = useState("admin@example.com");
     const [pwd, setPwd] = useState("456");
     const [showInvalidLogin, setShowInvalidLogin] = useState(false);
     // const activeUser = useContext(ActiveUserContext);
 
-    if (activeUser) {
-        return <Redirect to="/"/>
-    }
+    // if (activeUser) {
+    //     return <Redirect to="/"/>
+    // }
 
-    function login() {       
+    function login() { 
+        console.log(users);
         const activeUser = users.find(user => user.email === email && user.pwd === pwd);
 
         if (activeUser) {
