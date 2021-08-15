@@ -16,15 +16,7 @@ function LoginPage({activeUser, users, onLogin}) {
         return <Redirect to="/"/>
     }
 
-    function login() {
-        
-        // let activeUser = null;
-        // for (const user of users){
-        //     if(user => user.email === email && user.pwd === pwd){
-        //         activeUser = user;
-        //         break;
-        //     }
-        // }
+    function login() {       
         const activeUser = users.find(user => user.email === email && user.pwd === pwd);
 
         if (activeUser) {
