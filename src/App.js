@@ -10,24 +10,30 @@ import LoginPage from "./Page/LoginPage/LoginPage";
 // import Cart from "./components/Cart";
 // import Login from "./components/Login";
 import CartPage from "./Page/CartPage";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import jsonUsers from './data/users.json';
 import UserModel from './model/UserModel';
 import SigninPage from "./Page/SigninPage";
+import { signout } from "./actions/userAct";
 
 function App() {
   const [users, setUsers] = useState(jsonUsers.map(plainUser => new UserModel(plainUser)));
-  console.log(users);
+  // console.log(users);
   const [activeUser, setActiveUser] = useState();
-  const onLogout = () => setActiveUser(null);
+  // const onLogout = () => setActiveUser(null);
 
   const cart = useSelector(state => state.cart);
   const { cartItems } = cart;
-
-  function login(activeUser) {
-    setActiveUser(activeUser);
-    localStorage.setItem("activeUser", JSON.stringify(activeUser));
-  }
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo } = userSignin;
+  const dispatch = useDispatch();
+  const signoutHandler = () => {
+    dispatch(signout());
+  };
+  // function login(activeUser) {
+  //   setActiveUser(activeUser);
+  //   localStorage.setItem("activeUser", JSON.stringify(activeUser));
+  // }
 
   // function logout() {
   //   setActiveUser(null);
@@ -55,8 +61,20 @@ function App() {
               )}
 
             </Link>
-            {!activeUser ? <Link to="/signin">התחברות / הרשמה</Link> : null}
-            {activeUser ? <Link to="/logout" onClick={onLogout}>התנתק</Link> : null}
+            {
+              userInfo ? (
+                <div className="dropdown">
+                  <Link to="#">
+                    {userInfo.name} <i className="fa fa-caret-down"></i> {' '}
+                  </Link>
+                  <ul className="dropdown-content">
+                    <Link to="/signout" onClick={signoutHandler}> התנתק </Link>
+                  </ul>
+                </div>
+              ) : (
+                <Link to="/signin">התחברות / הרשמה</Link>
+              )}
+            {/* {activeUser ? <Link to="/logout" onClick={}>התנתק</Link> : null} */}
 
           </div>
         </header>

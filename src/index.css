@@ -55,7 +55,7 @@ a {
   text-decoration: none !important;
 }
 a:hover {
-  color: #ff8000;
+  color: #339B00 !important;
 }
 ul {
   padding: 0;
@@ -269,13 +269,13 @@ img.large {
 .dropdown-content {
   position: absolute;
   display: none;
-  right: 0;
+  left: 0rem;
   min-width: 12rem;
   padding: 1rem;
   z-index: 1;
   background-color: #5069a0;
   margin: 0;
-  margin-top: 0.4rem;
+  margin-top: 0.5rem;
   border-radius: 0.5rem;
 }
 .dropdown:hover .dropdown-content {
