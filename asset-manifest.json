@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/NirYon/static/css/main.526b26d4.chunk.css",
+    "main.js": "/NirYon/static/js/main.123e15bf.chunk.js",
+    "main.js.map": "/NirYon/static/js/main.123e15bf.chunk.js.map",
+    "runtime-main.js": "/NirYon/static/js/runtime-main.0a45f228.js",
+    "runtime-main.js.map": "/NirYon/static/js/runtime-main.0a45f228.js.map",
+    "static/css/2.4be38407.chunk.css": "/NirYon/static/css/2.4be38407.chunk.css",
+    "static/js/2.00e74a7c.chunk.js": "/NirYon/static/js/2.00e74a7c.chunk.js",
+    "static/js/2.00e74a7c.chunk.js.map": "/NirYon/static/js/2.00e74a7c.chunk.js.map",
+    "static/js/3.ac9d3381.chunk.js": "/NirYon/static/js/3.ac9d3381.chunk.js",
+    "static/js/3.ac9d3381.chunk.js.map": "/NirYon/static/js/3.ac9d3381.chunk.js.map",
+    "index.html": "/NirYon/index.html",
+    "static/css/2.4be38407.chunk.css.map": "/NirYon/static/css/2.4be38407.chunk.css.map",
+    "static/css/main.526b26d4.chunk.css.map": "/NirYon/static/css/main.526b26d4.chunk.css.map",
+    "static/js/2.00e74a7c.chunk.js.LICENSE.txt": "/NirYon/static/js/2.00e74a7c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0a45f228.js",
+    "static/css/2.4be38407.chunk.css",
+    "static/js/2.00e74a7c.chunk.js",
+    "static/css/main.526b26d4.chunk.css",
+    "static/js/main.123e15bf.chunk.js"
+  ]
+}
